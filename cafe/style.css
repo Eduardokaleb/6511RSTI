@@ -330,3 +330,15 @@ body::-webkit-scrollbar-thumb {
     scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
   }
 }
+
+/* Adicionar espaço entre as labels */
+.label {
+  margin-right: 8px;
+  padding: 4px;
+  font-weight: bold;
+}
+
+label {
+  display: block; /* Certifica-se de que estão em linhas diferentes */
+  margin-bottom: 10px; /* Espaço entre elas */
+}
