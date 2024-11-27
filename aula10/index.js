@@ -73,51 +73,32 @@ taskInput.addEventListener("keypress", function (e) {
   }
 });
 
+function toggleAddButton() {
+  const isInputEmpty = taskInput.value.trim() === "";
+  addButton.disabled = isInputEmpty;
+
+  // Aplicar estilização ao botão desabilitado
+  if (isInputEmpty) {
+    addButton.style.backgroundColor = "#ccc";
+    addButton.style.cursor = "not-allowed";
+  } else {
+    addButton.style.backgroundColor = ""; // Use a cor padrão ou personalizada
+    addButton.style.cursor = "pointer";
+  }
+}
+
+// Evento para monitorar mudanças no input e atualizar o botão
+taskInput.addEventListener("input", toggleAddButton);
+
+// Inicializar estado do botão
+toggleAddButton();
+
+// Evento para adicionar tarefa ao clicar no botão
+addButton.addEventListener("click", addTask);
+
+// Verificar visibilidade inicial das tarefas
+toggleTasksVisibility();
+
 addButton.addEventListener("click", addTask);
 
 toggleTasksVisibility();
-toglebutton();
-
-function toggleButton() {
-  addButton.disabled = inputTask.value.trim() === "";
-}
-
-// Evento de input no campo de texto
-inputTask.addEventListener("input", toggleButton);
-
-// Inicializa o botão como desabilitado
-toggleButton();
-
-// Evento de clique para adicionar a tarefa
-addButton.addEventListener("click", () => {
-  if (!inputTask.value.trim()) return;
-
-  // Cria o contêiner da tarefa
-  const taskElement = document.createElement("div");
-  taskElement.classList.add("task");
-
-  // Cria o texto da tarefa
-  const taskText = document.createElement("span");
-  taskText.textContent = inputTask.value;
-
-  // Cria o botão de deletar com ícone
-  const deleteButton = document.createElement("button");
-  deleteButton.classList.add("delete-btn");
-  deleteButton.innerHTML = `<i class="ph ph-trash"></i>`;
-
-  // Evento para remover a tarefa ao clicar no botão
-  deleteButton.addEventListener("click", () => {
-    taskElement.remove();
-  });
-
-  // Adiciona o texto e o botão ao contêiner da tarefa
-  taskElement.appendChild(taskText);
-  taskElement.appendChild(deleteButton);
-
-  // Adiciona a tarefa ao contêiner principal
-  taskContainer.appendChild(taskElement);
-
-  // Limpa o campo de entrada e desabilita o botão
-  inputTask.value = "";
-  toggleButton();
-});
