@@ -5,7 +5,7 @@
 }
 
 :root {
-  --primary-color: #4070f4;
+  --primary-color: #9198a1;
   --text-color: #333333;
   --white: #ffffff;
 }
@@ -16,7 +16,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f4faf4;
+  background-color: #3d444d;
   font-size: 62.5%;
   font-family: "Poppins", sans-serif;
 }
