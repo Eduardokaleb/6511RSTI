@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: aliceblue;
+  background-color: #000000;
 }
 
 .container {
@@ -50,13 +50,13 @@ body {
 }
 
 .img-box:nth-child(4) {
-  background: url(assets/play.jpg);
+  background: url(assets/mario2.jpg);
   background-size: cover;
   background-position: center;
 }
 
 .img-box p {
-  color: #000;
+  color: #f01515;
   font-weight: 600;
   position: absolute;
   bottom: 0;
@@ -76,7 +76,7 @@ body {
 }
 
 h1 {
-  color: rgb(1, 1, 7);
+  color: rgb(244, 244, 247);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,4 +89,6 @@ p {
   align-items: center;
   justify-content: center;
   font-family: "Itim", cursive;
+  animation: linear 1 forwards;
+  background-size: cover;
 }
